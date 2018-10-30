@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi</name>
+    </assembly>
+    <members>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Controllers.ErrorController">
+            <summary>
+            Error Controller
+            </summary>
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Controllers.PersonsController">
+            <summary>
+            Person Controller
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Controllers.PersonsController.#ctor(BenjaminAbt.ModernAPIDevelopment.Common.Services.PersonService)">
+            <summary>
+            Person Controller
+            </summary>
+            <param name="personService"></param>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Controllers.PersonsController.GetMany(System.Int32,System.Int32)">
+            <summary>
+            Returns all persons
+            </summary>
+            <response code="200">Returns all persons from the database</response>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Controllers.PersonsController.Get(System.Guid)">
+            <summary>
+            Gets a specific <see cref="T:BenjaminAbt.ModernAPIDevelopment.ApiSdk.Models.PersonViewModel"/> from given <paramref name="id"/>
+            </summary>
+            <param name="id">Unique ID of the person you're looking for</param>
+            <returns>A </returns>
+            <response code="200">The <see cref="T:BenjaminAbt.ModernAPIDevelopment.ApiSdk.Models.PersonViewModel"/> of given <paramref name="id"/></response>
+            <response code="404">No person found</response>        
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.CustomErrorExceptionMiddleware">
+            <summary>
+            Middleware to handle <see cref="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Exceptions.CustomErrorException"/> exceptions
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.CustomErrorExceptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            Creates a new instance of <see cref="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.InternalServiceErrorExceptionMiddleware"/>
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.CustomErrorExceptionMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes the next middleware of the current request hontext
+            </summary>
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.CustomErrorExceptionMiddlewareExtensions">
+            <summary>
+            Extensions for <see cref="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.InternalServiceErrorExceptionMiddleware"/>
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.CustomErrorExceptionMiddlewareExtensions.UseCustomErrorExceptionMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Registeres <see cref="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.InternalServiceErrorExceptionMiddleware"/> to the application middleware handler
+            </summary>
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.GeneralExceptionsMiddlewareExtensions">
+            <summary>
+            Extensions for general middleswares to handle exceptions
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.GeneralExceptionsMiddlewareExtensions.UseGeneralExceptionMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Registeres general middleswares to handle exceptions to the application middleware handler
+            </summary>
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.InternalServiceErrorExceptionMiddleware">
+            <summary>
+            Middleware to handle all exceptions
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.InternalServiceErrorExceptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            Creates a new instance of <see cref="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.InternalServiceErrorExceptionMiddleware"/>
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.InternalServiceErrorExceptionMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes the next middleware of the current request hontext
+            </summary>
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.InternalServiceErrorExceptionMiddlewareExtensions">
+            <summary>
+            Extensions for <see cref="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.InternalServiceErrorExceptionMiddleware"/>
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.InternalServiceErrorExceptionMiddlewareExtensions.UseInternalServiceErrorExceptionMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Registeres <see cref="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Middlewares.InternalServiceErrorExceptionMiddleware"/> to the application middleware handler
+            </summary>
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.CollectionResult`1">
+            <summary>
+            Collection media results
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.CollectionResult`1.Skip">
+            <summary>
+            Items skipped
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.CollectionResult`1.Take">
+            <summary>
+            Items took
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.CollectionResult`1.Total">
+            <summary>
+            Item total
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.CollectionResult`1.Count">
+            <summary>
+            Item count
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.CollectionResult`1.#ctor(System.Collections.Generic.IList{`0},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates an instance of <see cref="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.CollectionResult`1"/>
+            </summary>
+            <param name="items">Items to return</param>
+            <param name="skip">Items skipped</param>
+            <param name="take">Items took</param>
+            <param name="total">Items total</param>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.CollectionResult`1.Items">
+            <summary>
+            Items to return as collection
+            </summary>
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.DetailedErrorResult`1">
+            <summary>
+            Error body with further information
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.DetailedErrorResult`1.Body">
+            <summary>
+            Error body with further information
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.DetailedErrorResult`1.#ctor(`0,System.Int32,System.String,System.String)">
+            <summary>
+            Detail error container
+            </summary>
+            <param name="body">Error body with further information</param>
+            <param name="errorCode">Error Code</param>
+            <param name="title">Error Title</param>
+            <param name="error">Error Reason</param>
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.ErrorResult">
+            <summary>
+            Error Result
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.ErrorResult.ErrorCode">
+            <summary>
+            Error Code
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.ErrorResult.ErrorTitle">
+            <summary>
+            Error Title
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.ErrorResult.Error">
+            <summary>
+            Error Reason
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.ErrorResult.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            Creates an instance of <see cref="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.ErrorResult"/>
+            </summary>
+            <param name="errorCode">Error Code</param>
+            <param name="title">Error Title</param>
+            <param name="error">Error Reason</param>
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.ErrorsResult">
+            <summary>
+            Error Result
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.ErrorsResult.ErrorCode">
+            <summary>
+            Error Code
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.ErrorsResult.Errors">
+            <summary>
+            Error Reason
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.ErrorsResult.#ctor(System.Int32,System.Collections.Generic.IList{System.String})">
+            <summary>
+            Creates an instance of <see cref="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.ErrorsResult"/>
+            </summary>
+            <param name="errorCode">Error Code</param>
+            <param name="errors">Error Reason</param>
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.HypermediaResult">
+            <summary>
+            Base for hypermedia results
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.HypermediaResult.ToJson">
+            <summary>
+            returns the instance as json
+            </summary>
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.IHypermediaResult">
+            <summary>
+            Contract for hypermedia results
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.IHypermediaResult.ToJson">
+            <summary>
+            Returns the object serialized as json
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.InvalidModelStateResult">
+            <summary>
+            See <see cref="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.InvalidModelStateResult"/>
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.InvalidModelStateResult.ModelState">
+            <summary>
+            Invalid model state
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.InvalidModelStateResult.#ctor(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Creates a new instance of <see cref="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.InvalidModelStateResult"/>
+            </summary>
+            <param name="modelState">Invalid model state</param>
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.SingleResult`1">
+            <summary>
+            Represents a single result
+            </summary>
+            <typeparam name="T">Type of return</typeparam>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.SingleResult`1.#ctor(`0)">
+            <summary>
+            Creates an instance of <see cref="T:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.SingleResult`1"/>
+            </summary>
+            <param name="item">Item to return</param>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SimpleHypermediaApi.Results.SingleResult`1.Item">
+            <summary>
+            Item
+            </summary>
+        </member>
+    </members>
+</doc>

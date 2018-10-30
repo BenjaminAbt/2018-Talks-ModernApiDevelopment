@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi</name>
+    </assembly>
+    <members>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Configuration.SwaggerConfiguration">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Configuration.SwaggerConfiguration.ApiVersion">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Configuration.SwaggerConfiguration.Title">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Configuration.SwaggerConfiguration.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Configuration.SwaggerConfiguration.TermsOfService">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Configuration.SwaggerConfiguration.ContactName">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Configuration.SwaggerConfiguration.ContactMail">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Configuration.SwaggerConfiguration.ContactUrl">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Configuration.SwaggerConfiguration.LicenseName">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Configuration.SwaggerConfiguration.LicenseUrl">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Controllers.AuthorsController">
+            <summary>
+            Authors Controller
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Controllers.AuthorsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Authors Controller
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Controllers.AuthorsController.Get">
+            <summary>
+            Returns all authors
+            </summary>
+            <response code="200">Returns all authors from the database</response>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Controllers.AuthorsController.Get(System.Guid)">
+            <summary>
+            Gets a specific <see cref="T:BenjaminAbt.ModernAPIDevelopment.ApiSdk.Models.Authors.AuthorApiViewModel"/> from given <paramref name="id"/>
+            </summary>
+            <param name="id">Unique ID of the author you're looking for</param>
+            <returns>A </returns>
+            <response code="200">The <see cref="T:BenjaminAbt.ModernAPIDevelopment.ApiSdk.Models.Authors.AuthorApiViewModel"/> of given <paramref name="id"/></response>
+            <response code="404">No author found</response>         
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Controllers.BooksController">
+            <summary>
+            Books Controller
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Controllers.BooksController.#ctor(MediatR.IMediator)">
+            <summary>
+            Books Controller
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Controllers.BooksController.Get">
+            <summary>
+            Returns all books
+            </summary>
+            <response code="200">Returns all books from the database</response>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Controllers.BooksController.Get(System.Guid)">
+            <summary>
+            Gets a specific <see cref="T:BenjaminAbt.ModernAPIDevelopment.ApiSdk.Models.Books.BookApiViewModel"/> from given <paramref name="id"/>
+            </summary>
+            <param name="id">Unique ID of the book you're looking for</param>
+            <returns>A </returns>
+            <response code="200">The <see cref="T:BenjaminAbt.ModernAPIDevelopment.ApiSdk.Models.Books.BookApiViewModel"/> of given <paramref name="id"/></response>
+            <response code="404">No book found</response>         
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Controllers.BooksController.Add(BenjaminAbt.ModernAPIDevelopment.ApiSdk.Models.Books.BookAddModel)">
+            <summary>
+            Adds a book
+            </summary>
+            <param name="addModel">Model to add</param>
+            <returns>Added book</returns>
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Program">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Program.Main(System.String[])">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="T:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Startup">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Startup.Configuration">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="M:BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Options.IOptions{BenjaminAbt.ModernAPIDevelopment.SwashbuckleApi.Configuration.SwaggerConfiguration})">
+            <summary>
+            Description
+            </summary>
+        </member>
+    </members>
+</doc>

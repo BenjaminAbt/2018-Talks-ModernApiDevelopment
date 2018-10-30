@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>BenjaminAbt.ModernAPIDevelopment.Common</AssemblyName>
+    <RootNamespace>BenjaminAbt.ModernAPIDevelopment.Common</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GenFu" Version="1.4.22" />
+  </ItemGroup>
+
+</Project>

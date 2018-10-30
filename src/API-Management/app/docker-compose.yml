@@ -1,0 +1,19 @@
+# app/docker-compose.yml
+version: '3.2'
+
+networks:
+  private:
+  public:
+    external:
+      name: traefik_webgateway
+services:
+  aspnet:
+    image: microsoft/dotnet-samples:aspnetapp
+    labels:
+      - traefik.backend=aspnet
+      - traefik.docker.network=traefik_webgateway
+      - traefik.frontend.rule=Host:mywebapp.localhost
+      - traefik.port=80
+    networks:
+      - private
+      - public
