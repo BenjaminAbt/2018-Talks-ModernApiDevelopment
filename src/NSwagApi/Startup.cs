@@ -63,27 +63,27 @@ namespace BenjaminAbt.ModernAPIDevelopment.NSwagApi
 
             SwaggerOptions swagger = swaggerOptions.Value;
             // Enable the Swagger UI middleware and the Swagger generator
-            app.UseSwaggerUi(typeof(Startup).GetTypeInfo().Assembly, settings =>
-            {
-                settings.PostProcess = document =>
-                {
-                    document.Info.Version = swagger.ApiVersion;
-                    document.Info.Title = swagger.Title;
-                    document.Info.Description = swagger.Description;
-                    document.Info.TermsOfService = swagger.TermsOfService;
-                    document.Info.Contact = new NSwag.SwaggerContact
-                    {
-                        Name = swagger.ContactName,
-                        Email = swagger.ContactMail,
-                        Url = swagger.ContactUrl
-                    };
-                    document.Info.License = new NSwag.SwaggerLicense
-                    {
-                        Name = swagger.LicenseName,
-                        Url = swagger.LicenseUrl
-                    };
-                };
-            });
+            app.UseSwaggerUi3WithApiExplorer(settings =>
+           {
+               settings.PostProcess = document =>
+               {
+                   document.Info.Version = swagger.ApiVersion;
+                   document.Info.Title = swagger.Title;
+                   document.Info.Description = swagger.Description;
+                   document.Info.TermsOfService = swagger.TermsOfService;
+                   document.Info.Contact = new NSwag.SwaggerContact
+                   {
+                       Name = swagger.ContactName,
+                       Email = swagger.ContactMail,
+                       Url = swagger.ContactUrl
+                   };
+                   document.Info.License = new NSwag.SwaggerLicense
+                   {
+                       Name = swagger.LicenseName,
+                       Url = swagger.LicenseUrl
+                   };
+               };
+           });
 
             app.UseHttpsRedirection();
             app.UseMvc();

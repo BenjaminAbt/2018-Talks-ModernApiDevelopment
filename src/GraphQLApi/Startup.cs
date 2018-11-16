@@ -3,7 +3,7 @@ using BenjaminAbt.ModernAPIDevelopment.GraphQLApi.Engine;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using BenjaminAbt.ModernAPIDevelopment.GraphQLApi.Middlewares;
+using GraphiQl;
 using GraphQL.Types;
 
 namespace BenjaminAbt.ModernAPIDevelopment.GraphQLApi
@@ -17,8 +17,6 @@ namespace BenjaminAbt.ModernAPIDevelopment.GraphQLApi
             services.AddScoped<IObjectGraphType, MyGraphQuerySchema>();
             services.AddScoped<ISchema, MyQuerySchema>();
 
-            services.AddGraphQl(o => o.Path = "/graph"); // access graph via /graph
-
             services.AddMvc();
         }
         
@@ -27,11 +25,9 @@ namespace BenjaminAbt.ModernAPIDevelopment.GraphQLApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                app.UseGraphiQl();
             }
-
-            app.UseGraphQL();
-
-            // app.UseGraphiQl(); // uncomment this line if you want to use the embedded GraphQL UI explorer
             app.UseMvc();
         }
     }

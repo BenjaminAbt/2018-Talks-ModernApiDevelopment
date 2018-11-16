@@ -318,6 +318,3 @@ ASALocalRun/
 
 # MSBuild Binary and Structured Log
 *.binlog
-
-## KLINGELNBERG
-_artifacts/
