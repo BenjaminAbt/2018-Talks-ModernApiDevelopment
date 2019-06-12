@@ -10,7 +10,7 @@ namespace BenjaminAbt.ModernAPIDevelopment.ApiSdk.Models.Books
         public double? Price { get; set; }
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            if (String.IsNullOrEmpty(Name)) yield return new ValidationResult($"{nameof(Name)} is missing.", new[] { nameof(Name) });
+            if (string.IsNullOrEmpty(Name)) yield return new ValidationResult($"{nameof(Name)} is missing.", new[] { nameof(Name) });
             if (Price == null)
             {
                 yield return new ValidationResult($"{nameof(Price)} is missing.", new[] { nameof(Price) });

@@ -1,5 +1,4 @@
 ﻿using System;
-using BenjaminAbt.ModernAPIDevelopment.ApiSdk.Models;
 using BenjaminAbt.ModernAPIDevelopment.ApiSdk.Models.Authors;
 using BenjaminAbt.ModernAPIDevelopment.Common.Models;
 

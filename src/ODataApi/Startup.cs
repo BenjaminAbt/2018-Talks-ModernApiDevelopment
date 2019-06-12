@@ -55,7 +55,9 @@ namespace BenjaminAbt.ModernAPIDevelopment.ODataApi
         private static IEdmModel GetEdmModel()
         {
             ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
-            builder.EnableLowerCamelCase(); // WTF
+
+
+            builder.EnableLowerCamelCase(); // WTF, BUG?
 
             builder.EntitySet<AuthorApiViewModel>("Authors"); // CAMELCASE!
             builder.EntitySet<BookApiViewModel>("Books");// CAMELCASE!
